@@ -93,18 +93,18 @@ TABLE_NAME=Customers
 AWS_REGION=us-east-1
 ```
 
-4. Inicie o DynamoDB local:
+4. Inicie o DynamoDB local (veja o arquivo para mais detalhes):
 ```bash
 ./dynamodb-local.sh run
 ```
-veja mais em: ./dynamodb-local.sh
+
 ---
 
 ## Scripts Disponíveis
 
 ### Executar a aplicação localmente:
 ```bash
-sam local start-api
+npm run sam:start
 ```
 
 ### Compilar o projeto:
@@ -124,6 +124,6 @@ npm run test:coverage
 
 ### Deploy para a AWS:
 ```bash
-sam deploy
+npm run sam:deploy
 ```
 ---
