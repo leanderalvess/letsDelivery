@@ -1,0 +1,16 @@
+Testar as Rotas
+
+1. Criar um Cliente:
+    curl --request POST --url http://localhost:3000/customers --header 'Content-Type: application/json' --data '{ "id": "1", "name": "Vinicius Alves", "dateOfBirth": "1998-03-13", "isActive": true, "addresses": ["Rua A, 123"], "contacts": [{ "email": "joao@example.com", "phone": "999999999", "isPrimary": true }]}'
+
+2. Buscar Cliente:
+    curl --request GET --url 'http://localhost:3000/customers?id=1'
+
+3. Atualizar Cliente:
+    curl --request PUT --url 'http://localhost:3000/customers?id=1' --header 'Content-Type: application/json' --data '{ "name": "Leander", "isActive": false}'
+
+4. Deletar Cliente:
+    curl --request DELETE --url 'http://localhost:3000/customers?id=1'
+
+
+    https://2shr48v5u1.execute-api.us-east-1.amazonaws.com/Prod
