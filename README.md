@@ -81,7 +81,13 @@ cd letsDelivery
 npm install
 ```
 
-3. Configure as variáveis de ambiente no arquivo `.env`:
+3. Configure as variáveis de ambiente nos arquivos `.env*`:
+.env:
+```plaintext
+TABLE_NAME='Customers'
+AWS_REGION='us-east-1'
+```
+.env.test:
 ```plaintext
 TABLE_NAME=Customers
 AWS_REGION=us-east-1
@@ -118,6 +124,6 @@ npm run test:coverage
 
 ### Deploy para a AWS:
 ```bash
-sam deploy --guided
+sam deploy
 ```
 ---
