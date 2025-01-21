@@ -8,7 +8,10 @@ export class CustomerService {
     private dbClient: DynamoDBClient;
 
     constructor() {
-        this.dbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
+        this.dbClient = new DynamoDBClient({
+            region: process.env.AWS_REGION,
+            endpoint: process.env.DYNAMODB_ENDPOINT
+        });
     }
 
     async createCustomer(customer: CreateCustomerDTO): Promise<{ message: string }> {

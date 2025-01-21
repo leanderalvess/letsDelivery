@@ -10,8 +10,8 @@
     "sam": "clear && npm run clearDeploy && npm run build && sam build",
     "sam:start": "npm run sam && sam local start-api",
     "sam:deploy": "npm run sam && sam deploy",
-    "test": "clear && jest",
-    "test:coverage": "clear && jest --coverage"
+    "test": "clear && npm run clearDeploy && jest",
+    "test:coverage": "clear && npm run clearDeploy && jest --coverage"
   },
   "keywords": [],
   "author": "",
