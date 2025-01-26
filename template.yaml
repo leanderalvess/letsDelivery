@@ -8,7 +8,7 @@ Resources:
     Properties:
       Handler: src/index.handler
       Runtime: nodejs20.x
-      CodeUri: dist/
+      CodeUri: dist
       Timeout: 10
       Environment:
         Variables:

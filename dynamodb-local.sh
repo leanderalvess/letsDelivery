@@ -5,22 +5,20 @@ dynamodb_container_name="dynamodb-local"
 usage() {
     echo "Uso: $0 {start|stop|run}"
     echo "\nOpções:"
-    echo "  run   - Inicia o contêiner com um nome fixo ($dynamodb_container_name)"
+    echo "  create-dynamo - Cria o contêiner com um nome fixo ($dynamodb_container_name)"
     echo "  stop  - Para o contêiner sem removê-lo"
     echo "  start - Reinicia o contêiner existente"
     echo "  create - Cria a tabela Customers"
     echo "  list - Lista as tabelas criada"
-    exit 1
 }
 
 if [ "$#" -ne 1 ]; then
     usage
-    exit 1
 fi
 
 case "$1" in
-    run)
-        echo "Iniciando o contêiner $dynamodb_container_name"
+    create-dynamo)
+        echo "Cria o contêiner $dynamodb_container_name"
         docker run -d --name "$dynamodb_container_name" -p 8000:8000 amazon/dynamodb-local
         ;;
     stop)
@@ -41,7 +39,6 @@ case "$1" in
         ;;
     *)
         usage
-        exit 1
         ;;
 esac
 

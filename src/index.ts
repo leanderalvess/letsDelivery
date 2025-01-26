@@ -7,5 +7,13 @@ config();
 const customerRoutes = new CustomerRoutes();
 
 export const handler: APIGatewayProxyHandler = async (event) => {
-    return customerRoutes.route(event);
+    try {
+        return customerRoutes.route(event);
+    } catch (error) {
+        console.error("Erro no processamento:", error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ message: "Erro interno", error: error }),
+        };
+    }
 };

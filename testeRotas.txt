@@ -11,6 +11,3 @@ Testar as Rotas
 
 4. Deletar Cliente:
     curl --request DELETE --url 'http://localhost:3000/customers?id=1'
-
-
-    https://2shr48v5u1.execute-api.us-east-1.amazonaws.com/Prod

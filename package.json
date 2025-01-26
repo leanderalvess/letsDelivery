@@ -6,12 +6,12 @@
   "scripts": {
     "start": "clear && ts-node src/index.ts",
     "build": "clear && tsc && cp package.json dist/",
-    "clearDeploy": "rm -rf dist/ && rm -rf .aws-sam/",
-    "sam": "clear && npm run clearDeploy && npm run build && sam build",
+    "clearDeploy": "clear && rm -rf dist/ && rm -rf .aws-sam/",
+    "sam": "npm run clearDeploy && npm run build && sam build",
     "sam:start": "npm run sam && sam local start-api",
     "sam:deploy": "npm run sam && sam deploy",
-    "test": "clear && npm run clearDeploy && jest",
-    "test:coverage": "clear && npm run clearDeploy && jest --coverage"
+    "test": "npm run clearDeploy && jest",
+    "test:coverage": "npm run clearDeploy && jest --coverage"
   },
   "keywords": [],
   "author": "",
